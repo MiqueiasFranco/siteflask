@@ -1,13 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Agendamento</title>
+    <style>
+        body{
+            background-image: url("https://images.unsplash.com/photo-1553521041-d168abd31de3?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-size: 100% ;
+            background-position: center;
+        }
+        .input {
+            display: flex;
+            flex-direction: column;
+            padding-top: 10px;
+            text-align: center;
+            text-shadow: 2px 2px 2px black;
+            gap: 10px;
+        }
+        .input input{
+            outline: none;
+            border: none;
+            border-radius: 1rem;
+            text-align: center;
+            padding: 10px;
+        }
+        #form{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            top: 50%;
+            left: 50%;
+            transform: translate(-40%,-50%);
+            background-color: rgba(0, 0, 0, 0.685);
+            gap: 30px;
+            border-radius: 1rem;
+            padding: 50px;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            height: 100%;
+            width: 100%;
+            font-family: 'Courier New', Courier, monospace;
+
+        }
+        .button{
+            padding: 8px;
+            border-radius: 1rem;
+            border: none;
+            background: rgba(0, 0, 0, 0.699);
+            box-shadow: 0px 1px 3px white;
+            color: white;
+            transition: 1s;
+        }
+        .button:hover{
+            transform: scale(1.1);
+        }
+    </style>
 </head>
+
 <body>
-    <div>
-        <p> usando um template para a homepage </p>
+    <div id="form">
+        <form action="">
+            <h2 class="title">AGENDAMENTO</h2>
+            <div class="input">
+                <label for="">Nome</label>
+                <input type="text" name="username" placeholder="Ex: Joao guilherme" id="username">
+            </div>
+
+            <div class="input">
+                <label for="">Dia</label>
+                <input type="date" name="dia" placeholder="Ex: 12" id="dia">
+            </div>
+
+            <div class="input">
+                <label for="">Hora</label>
+                <input type="time" name="Hora" placeholder="Ex: 12" id="Hora">
+            </div>
+
+            
+        </form>
+        <button class="button" type="submit">Agendar</button>            
     </div>
 </body>
+
 </html>
