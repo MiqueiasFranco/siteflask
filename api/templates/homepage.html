@@ -7,8 +7,10 @@
     <title>Agendamento</title>
     <style>
         body{
+            height: 100vh;
+            width: 90vw;
             background-image: url("https://images.unsplash.com/photo-1553521041-d168abd31de3?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-            background-size: 100% ;
+            background-size: 100% 100% ;
             background-position: center;
         }
         .input {
@@ -32,19 +34,17 @@
             flex-direction: column;
             top: 50%;
             left: 50%;
-            transform: translate(-40%,-50%);
+            transform: translate(-50%,-50%);
             background-color: rgba(0, 0, 0, 0.685);
-            gap: 30px;
+            backdrop-filter: blur(5px);
             border-radius: 1rem;
-            padding: 50px;
         }
         form{
             display: flex;
             flex-direction: column;
             align-items: center;
             color: white;
-            height: 100%;
-            width: 100%;
+            padding: 50px;
             font-family: 'Courier New', Courier, monospace;
 
         }
@@ -55,7 +55,9 @@
             background: rgba(0, 0, 0, 0.699);
             box-shadow: 0px 1px 3px white;
             color: white;
+            width: 70%;
             transition: 1s;
+            margin-top: 20px;
         }
         .button:hover{
             transform: scale(1.1);
@@ -65,11 +67,11 @@
 
 <body>
     <div id="form">
-        <form action="">
+        <form action="cadastrar">
             <h2 class="title">AGENDAMENTO</h2>
             <div class="input">
                 <label for="">Nome</label>
-                <input type="text" name="username" placeholder="Ex: Joao guilherme" id="username">
+                <input type="text" name="username" placeholder="Ex: Joao guilherme" id="nome">
             </div>
 
             <div class="input">
@@ -83,8 +85,8 @@
             </div>
 
             
+            <button class="button" type="submit">Agendar</button>            
         </form>
-        <button class="button" type="submit">Agendar</button>            
     </div>
 </body>
 
