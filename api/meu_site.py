@@ -1,7 +1,8 @@
+from datetime import *
 from flask import Flask,render_template,request
-from connect import inserir
+from api.src.connect import inserir
 
-from model import Pessoa
+from api.src.model import Pessoa
 
 app = Flask(__name__)
 
@@ -18,14 +19,14 @@ def contatos():
 def usuarios(nome_usuario):
     return render_template("usuarios.html",nome_usuario=nome_usuario)
 
-@app.route("/")
+@app.route("/cadastrar", methods=["GET","POST"])
 def cadastrar():
     nome = request.form["nome"]
-    dia = request.form["dia"]
+    dia =  request.form['dia']
     hora = request.form["hora"]
     pessoa = Pessoa(nome,dia,hora)
     inserir(pessoa)
-    return render_template("homepage.html")
+    return render_template("msg.html",nome=nome,dia=dia,hora=hora)
 
 
 # coloca o site no ar 

@@ -1,21 +1,21 @@
 import mysql.connector
-from model import Pessoa
+from api.src.model import Pessoa
 from flask import jsonify
 
 conexao = mysql.connector.connect(
-    host = 'localhost',
+    host = 'monorail.proxy.rlwy.net',
     user =  'root',
-    password = 'minhasenha123',
-    database = 'clientes',
-    port = 3306
+    password = 'dh3g6-Fh1e46CddaeA66aBbBD33a3H6d',
+    database = 'railway',
+    port = 34731
 )
 cursor = conexao.cursor()
 
 def inserir(model:Pessoa):
-    comando = "CREATE TABLE IF NOT EXISTS cadastros (nome varchar(40),dia INT,hora INT) "
+    comando = "CREATE TABLE IF NOT EXISTS cadastros (nome varchar(40),dia date,hora time) "
     cursor.execute(comando)
     conexao.commit()
-    cursor.execute(f'INSERT INTO cadastros VALUES ("{model.nome}",{model.dia},{model.hora})')
+    cursor.execute(f'INSERT INTO cadastros (nome,dia,hora) VALUES ("%s",%s,%s)',(model.nome,model.dia,model.hora))
     conexao.commit()
 
 def mostrardados():
